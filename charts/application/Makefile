@@ -14,7 +14,7 @@ build: clean
 	helm install . --name ${NAME} --debug --dry-run
 
 install:  build
-        helm repo add activiti-cloud-helm-charts https://activiti.github.io/activiti-cloud-helm-charts/
+	helm repo add activiti-cloud-helm-charts https://activiti.github.io/activiti-cloud-helm-charts/
 	helm repo add activiti-cloud-charts https://activiti.github.io/activiti-cloud-charts/
 	helm install . --name ${NAME}
 
