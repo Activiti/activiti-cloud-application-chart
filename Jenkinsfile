@@ -23,7 +23,7 @@ pipeline {
         }
         steps {
           container('maven') {
-           dir(".charts/$APP_NAME") {
+           dir("./charts/$APP_NAME") {
 	          sh 'make build'
            }
           }
@@ -43,8 +43,7 @@ pipeline {
             // so we can retrieve the version in later steps
             sh "echo \$(jx-release-version) > VERSION"
 
-            dir(".charts/$APP_NAME") {
-		sh 'pwd'
+            dir("./charts/$APP_NAME") {
                 sh 'make tag'
                 sh 'make release'
                 sh 'make github'
@@ -58,7 +57,7 @@ pipeline {
           branch 'master'
         }
         steps {
-          dir(".charts/$APP_NAME") {
+          dir("./charts/$APP_NAME") {
             container('maven') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
               sh 'jx step git credentials'
