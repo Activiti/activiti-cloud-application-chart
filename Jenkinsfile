@@ -1,7 +1,10 @@
 pipeline {
     agent {
-      label "jenkins-maven"
+      label "jenkins-maven" 
     }
+    options {
+      disableConcurrentBuilds()
+    }  
     environment {
       ORG               = 'activiti'
       APP_NAME          = 'application'
