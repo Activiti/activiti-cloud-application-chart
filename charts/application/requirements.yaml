@@ -15,7 +15,7 @@ dependencies:
   alias: "rabbitmq"
 - name: "example-runtime-bundle"
   repository: "https://activiti.github.io/activiti-cloud-helm-charts/"
-  version: "7.0.64"
+  version: "7.0.65"
   condition: "application.runtime-bundle.enabled,runtime-bundle.enabled"
 - name: "example-cloud-connector"
   repository: "https://activiti.github.io/activiti-cloud-helm-charts/"
