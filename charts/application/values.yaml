@@ -15,7 +15,7 @@ querypostgresql:
 activiti-cloud-demo-ui:
   enabled: false
 
-runtime-bundle:
+example-runtime-bundle:
   enabled: false
 
 activiti-cloud-connector:
