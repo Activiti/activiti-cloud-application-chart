@@ -65,7 +65,7 @@ pipeline {
         steps {
           dir("./charts/$APP_NAME") {
             container('maven') {
-              sh 'jx step changelog --version v\$(cat ../../VERSION)'
+              //sh 'jx step changelog --version v\$(cat ../../VERSION)'
               sh 'jx step git credentials'
               sh 'cd ../.. && updatebot push-version --kind helm $APP_NAME \$(cat VERSION)'
 
