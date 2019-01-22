@@ -6,7 +6,11 @@ activiti-cloud-query:
   db:
     name: querypostgresql
     password: query
+
 activiti-cloud-audit:
+  enabled: true
+
+activiti-cloud-notifications:
   enabled: true
 
 querypostgresql:
