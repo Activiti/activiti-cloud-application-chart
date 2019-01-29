@@ -4,4 +4,3 @@ github:
     repositories:
     - name: activiti-cloud-example-chart
     - name: activiti-cloud-example-chart-security-policies
-    - name: activiti-cloud-example-chart-modeling
