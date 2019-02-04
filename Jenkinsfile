@@ -50,9 +50,13 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
 
             dir("./charts/$APP_NAME") {
-                sh 'make tag'
+		retry(5){    
+                  sh 'make tag'
+		}
                 sh 'make release'
-                sh 'make github'
+		retry(5){    
+                  sh 'make github'
+		}
             }
           }
         }
@@ -67,8 +71,9 @@ pipeline {
             container('maven') {
               //sh 'jx step changelog --version v\$(cat ../../VERSION)'
               sh 'jx step git credentials'
-              sh 'cd ../.. && updatebot push-version --kind helm $APP_NAME \$(cat VERSION)'
-
+	      retry(5){	    
+                sh 'cd ../.. && updatebot push-version --kind helm $APP_NAME \$(cat VERSION)'
+	      }
             }
           }
         }
