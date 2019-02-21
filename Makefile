@@ -12,8 +12,9 @@ DEPENDENCIES_VERSIONS := ${QUERY_ACTIVITI_CLOUD_DEPENDENCIES_VERSION} ${AUDIT_AC
 validate:
 	@echo "Validating dependencies to match ${ACTIVITI_CLOUD_DEPENDENCIES_ARTIFACT_ID} same versions..."
 	$(eval RESULT := $(subst ${QUERY_ACTIVITI_CLOUD_DEPENDENCIES_VERSION},,${DEPENDENCIES_VERSIONS}))
+	@echo QUERY AUDIT CONNECTOR RB NOTIFICATIONS
 	$(if $(strip $(RESULT)), \
-		@echo "Found entries in ${DEPENDENCIES_VERSIONS} with different versions"; exit 1, \
+		@echo "Found entries in ${DEPENDENCIES_VERSIONS} with different versions"; @echo QUERY AUDIT CONNECTOR RB NOTIFICATIONS;exit 1, \
 		@echo "All versions match to ${QUERY_ACTIVITI_CLOUD_DEPENDENCIES_VERSION}" \
 	)
 
