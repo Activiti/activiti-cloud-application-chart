@@ -50,11 +50,11 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
 
             dir("./charts/$APP_NAME") {
-		retry(5){    
+		retry(2){    
                   sh 'make tag'
 		}
                 sh 'make release'
-		retry(5){    
+		retry(2){    
                   sh 'make github'
 		}
             }
