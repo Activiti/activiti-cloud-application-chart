@@ -71,6 +71,7 @@ pipeline {
             container('maven') {
               //sh 'jx step changelog --version v\$(cat ../../VERSION)'
               sh 'jx step git credentials'
+              sh 'sleep 10'
 	      retry(5){	    
                 sh 'cd ../.. && updatebot push-version --kind helm $APP_NAME \$(cat VERSION)'
 	      }
