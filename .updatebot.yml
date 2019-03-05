@@ -3,4 +3,6 @@ github:
   - name: activiti
     repositories:
     - name: activiti-cloud-example-chart
+      useSinglePullRequest: true
     - name: activiti-cloud-example-chart-security-policies
+      useSinglePullRequest: true
